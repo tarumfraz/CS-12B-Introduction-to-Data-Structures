@@ -1,0 +1,29 @@
+// ***********************************************************************//
+//  
+// design.txt
+// File meant to explain the design/layout/choices of my program
+//      
+// ***********************************************************************//
+
+Since this was a free form program without a template, it was unlike
+most of our programs, so I used a lot of coding styles in java that
+I learned in CS 11. There are a couple different data structures I used. An example is in the Room.java file. To hold all of the 
+different tags, I put them in an array of strings. This made it easy
+to assign all of the different cases in the cyoa.java file which 
+contains the main function. There were different ways I could do this
+such as creating a linked list and inserting all of the tags in there
+However, that would have been inefficient since we do not need to 
+change them. Speaking of not changing them, a stack or queue would
+have worked perfectly just as well. I am turning in a few different
+files, Adventure.java which contains my adventure class. In this file
+I crete and update my rooms with the appropiate options/tags. In the
+file Option.java, I have the Option class and all of its instances
+that aid me with dealing with the details, choices, rooms & options. 
+In my file Room.java, I have my Room class, where I am organziing 
+all of the options that the user chooses. In this class, I create
+options, update the appropiate tags and rooms, and display them too.
+The cyoa.java contains my main function, and also parses command line
+arguments in order to start the game, some of which include thrown
+exceptions if not ran in the correct manner. My demo.adventure is the
+sample game I created. This game is a simple pokemon game, where the 
+player can battle, sleep, fee attacks, and explore!!!

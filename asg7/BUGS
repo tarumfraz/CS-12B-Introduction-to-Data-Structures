@@ -1,0 +1,138 @@
+// =======================================================================// 
+// This is a file where i am going to keep track of all of the bugs 
+// I found in the original list.c   
+//
+// It contains a simple summary of the problems, and how I went about
+// fixing these issues 
+// =======================================================================//  
+
+//******//
+Line 11
+//*******//
+
+Problem:
+
+the pointer *head is uninitiazed
+
+Solution:
+
+Set it = to NULL
+
+******************************
+//********//
+Line 15 & 16
+//********//
+
+Problem:
+These two lines need to be initialized in one step. *n is basically never initialized, 
+and it is unecessary to cast the value of n into a struct
+
+Solution:
+
+Change - 
+
+struct node *n;
+n = (struct node *)malloc(sizeof(struct node));
+
+ To
+ 
+struct node *n = malloc(sizeof(struct node));
+******************************
+//********//
+Lines 23-29
+//********//
+
+Problem:
+u & v are not pointers, incomaptible memory problem...we have to change everything to 
+the correct syntax that a pointer would use, because right now it is not pointing to anything
+
+Solution:
+
+Change - 
+
+struct node u, v;
+u.value = a;
+u.next = &v;
+v.value = b;
+v.next = head;
+head = &u;
+
+To - 
+
+struct node *u = malloc(sizeof(struct node)); 
+struct node *v = malloc(sizeof(struct node));
+u->value = a;
+u->next = v;
+v->value = b;
+v->next = head;
+head = u;
+******************************
+//********//
+Line 34
+//********//
+
+Problem:
+We have nothing to keep track of the previous node, which makes us lose a link
+
+Solution:
+
+create a pointer called previous
+
+******************************
+//********//
+Lines 34-39
+//********//
+
+Problem:
+This function isn't deleting the right item, and memory gets lost here
+This function also doesn't correctly re-direct the pointers from previous to next
+
+Solution:
+
+Change the original to - 
+    while(n->value != v)
+    {
+        if(n->next == NULL){
+            
+        }else
+        {
+            prev = n;
+            n = n->next;
+        }
+    }
+    if(n == head){
+        head = n->next;
+        free(n);
+    }else
+        prev->next = n->next;
+        free(n);
+
+}
+This accounts for a variety of different situations, and also correct reassigns the pointers
+
+******************************
+//********//
+Lines 71-79
+//********//
+
+Problem - 
+We aren't actually freeing the entire linked list
+
+Solution - 
+Create a new node, assign it to the first element
+free elements by looping through the list
+create a new node that keeps the refrence
+free list by looping through it
+
+ struct node *p = head;
+        struct node *next = NULL;
+
+        while(p != NULL ) {
+           next = p->next;
+           free(p);
+           p = next;
+    
+         }
+
+
+

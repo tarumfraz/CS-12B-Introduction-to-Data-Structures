@@ -1,0 +1,30 @@
+// ***********************************************************************//
+//  
+// README includes all files being submitted, including itself along
+// with any special notes to the grader
+//      
+// ***********************************************************************//
+
+TO RUN MY PROGRAM WITH MY DEMO
+$ make
+$ make test
+
+TO WIN MY GAME (IN THE FASTEST WAY)
+choose: aaaaabbab
+
+
+TO RUN MY PROGRAM WITH YOUR OWN DEMO
+$ make
+$ myCyoa [filename]
+
+FILES THAT I AM SUBMITTING
+Adventure.java
+cyoa.java
+Option.java
+Room.java
+demo.adventure
+README
+Makefile
+design.txt
+
+

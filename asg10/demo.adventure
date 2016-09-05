@@ -1,0 +1,126 @@
+r oakestown
+d This is OAKESTOWN
+d You are given a baby Pikachu, your new sidekick!
+o Go explore with your new pal!
+t explore
+o Go to sleep
+t sleepingroom
+
+r sleepingroom
+d This is the sleeping room, you are asleep
+o Stay asleep
+t sleepingroom
+o Wake up
+t outside
+
+r outside
+d You are outside of the sleeping room
+o go back inside
+t sleepingroom
+o Go explore with your pal Pikachu!
+t explore
+
+r explore
+d You are exploring out in the wild
+d Uh Oh... A wild charmander appears out of nowhere!!!
+o Choose to attack
+t attack
+o Choose to flee
+t flee1
+
+r flee1
+d You have successfully fled
+d you are tired and hungry
+o go to sleep
+t sleepingroom
+o go explore and find food
+t explore
+
+r attack
+d You are in a battle with a wild charmander!!!!
+d You have to give Pikachi commands!!!
+o Tell Pikachi to attack with Tail Whip
+t tailWhip
+o Tell Pikachi to attack with Thunder Shock!!
+t thunderShock
+
+
+r tailWhip
+d Pikachu Attacked with Tail Whip!
+o continue to fight
+t fight
+o choose to flee before charmander attacks!
+t flee1
+
+
+r thunderShock
+d Pikachu Attacked with Thunder Shock!
+o continue to fight
+t fight
+o choose to flee before charmander attacks!
+t flee1
+
+
+r fight
+d Charmander attacked with Toxic
+d pikachi is hurt!!!
+o continue to fight
+t continueFight
+o choose to flee
+t flee1
+
+r continueFight
+d You can flee, or continue to fight
+o Flee
+t lose
+o Fight
+t fight2
+
+r lose
+d YOU ARE A QUITTER
+d YOU LOSE
+d BYE!!!!!!!!!!!!!
+
+r fight2
+d You chose to continue to fight, are you sure?
+o yes
+t fight3
+o no
+t continueFight
+
+r fight3
+d Charmander attacked with Burn
+d He missed
+o Attack with Spark
+t spark
+o Attack with Nuzzle
+t win
+
+r spark
+d Pikachu attacked with spark
+d Charmander dodged & ran away
+o Go back to the sleeping room
+t sleepingroom
+o Go heal Pikachu
+t hospital
+
+r healPikachu
+d pikachu is healed
+d pikachu is happy
+d YOU WIN THE GAME
+o go explore
+t explore
+o go sleep
+t sleepingroom
+
+r hospital
+d welcome to OAKESTOWN hospital
+o help pikachu
+t healPikachu
+o leave
+t explore
+
+r win
+d CHARMANDER FAINTED
+d you threw a pokeball and caught him!!
+d CONGRATS YOU HAVE WON!!!!!!
